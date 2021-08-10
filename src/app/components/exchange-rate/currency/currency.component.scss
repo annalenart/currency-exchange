@@ -1,0 +1,16 @@
+.currency {
+  font: inherit;
+  border: none;
+  outline: none;
+}
+
+.amount {
+  font: inherit;
+  border: none;
+  outline: none;
+  text-align: end;
+}
+
+::placeholder {
+  opacity: 0.3;
+}

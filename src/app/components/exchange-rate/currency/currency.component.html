@@ -1,0 +1,22 @@
+<select
+  class="currency"
+  (change)="currencyPicked(select.value)"
+  #select
+  [(ngModel)]="selectedCurrency"
+>
+  <option
+    class="currency-option"
+    *ngFor="let currency of currenciesList"
+    [value]="currency"
+  >
+    {{ currency }}
+  </option>
+</select>
+<input
+  class="amount"
+  type="number"
+  placeholder="0"
+  (keyup)="onAmountChanged(amountInput.value)"
+  #amountInput
+  [(ngModel)]="amount"
+/>

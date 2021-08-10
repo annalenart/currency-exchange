@@ -1,0 +1,33 @@
+:host {
+  margin-top: 100px;
+  display: grid;
+  grid-gap: 30px;
+  place-items: center;
+}
+
+.course {
+  opacity: 0.3;
+}
+
+.swap-btn {
+  text-align: center;
+  font: inherit;
+  font-size: 12px;
+  border: none;
+  outline: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid black;
+
+  &:active {
+    opacity: 1;
+    transform: scale(0.95);
+  }
+
+  @media (min-width: 500px) {
+    width: 60px;
+    height: 60px;
+    font-size: 14px;
+  }
+}

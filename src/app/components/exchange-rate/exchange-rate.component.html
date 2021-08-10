@@ -1,0 +1,24 @@
+<ng-container *ngIf="currenciesList$ | async as currenciesList; else loading">
+  <app-currency
+    [currenciesList]="currenciesList"
+    (currencyChanged)="setInitialCurrency($event)"
+    (amountChanged)="convertTo($event)"
+    #initial
+  ></app-currency>
+  <button class="swap-btn" (click)="swapCurrencies()">SWAP</button>
+  <span class="course" *ngIf="initialCurrencyRates"
+    >1 {{ initialCurrencyCode }} =
+    {{ initialCurrencyRates[targetCurrencyCode] }}
+    {{ targetCurrencyCode }}</span
+  >
+  <app-currency
+    [currenciesList]="currenciesList"
+    (currencyChanged)="setTargetCurrency($event)"
+    (amountChanged)="convertFrom($event)"
+    #target
+  ></app-currency>
+</ng-container>
+
+<ng-template #loading>
+  <span>Loading...</span>
+</ng-template>
